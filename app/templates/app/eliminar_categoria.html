@@ -1,0 +1,9 @@
+{% extends "app/base.html" %}
+{% block contenido %}
+<h3>Eliminar categoria</h3>
+    <form method="post" class="form">
+{% csrf_token %}
+<h4>¿Seguro que quieres eliminar {{ object.nombre }}?</h4>
+<button type="submit" class="btn btn-danger">Sí, eliminar definitivamente</button>
+</form>
+{% endblock %}
