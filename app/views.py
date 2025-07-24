@@ -22,13 +22,13 @@ class CategoriaCreateView(CreateView):
     template_name = 'app/formulario_categorias.html'
     success_url = reverse_lazy('lista_categorias')
 
-class ProductoUpdateView(UpdateView, LoginRequiredMixin):
+class ProductoUpdateView(LoginRequiredMixin,UpdateView ):
     model = Producto
     fields = ['nombre', 'unidades','precio','categoria']
     template_name = 'app/formulario.html'
     success_url = reverse_lazy('lista_productos')
 
-class CategoriaUpdateView(UpdateView, LoginRequiredMixin):
+class CategoriaUpdateView(LoginRequiredMixin,UpdateView ):
     model = Categoria
     fields = ['nombre', 'descripcion']
     template_name = 'app/formulario_categorias.html'
